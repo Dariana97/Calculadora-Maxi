@@ -409,7 +409,7 @@ QPushButton:hover {
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../../OneDrive/Documents/Learning/Python/Proyecto Integral/media/squared.png</normaloff>../../OneDrive/Documents/Learning/Python/Proyecto Integral/media/squared.png</iconset>
+                       <normaloff>media/squared.png</normaloff>media/squared.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -449,7 +449,7 @@ QPushButton:hover {
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../../OneDrive/Documents/Learning/Python/Proyecto Integral/media/cubed.png</normaloff>../../OneDrive/Documents/Learning/Python/Proyecto Integral/media/cubed.png</iconset>
+                       <normaloff>./media/cubed.png</normaloff>./media/cubed.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -486,7 +486,7 @@ QPushButton:hover {
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../../OneDrive/Documents/Learning/Python/Proyecto Integral/media/power (1).png</normaloff>../../OneDrive/Documents/Learning/Python/Proyecto Integral/media/power (1).png</iconset>
+                       <normaloff>./media/xn.png</normaloff>./media/xn.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -923,7 +923,7 @@ QPushButton:hover {
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>media/letter-e.png</normaloff>media/letter-e.png</iconset>
+                       <normaloff>./media/letter-e.png</normaloff>./media/letter-e.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
