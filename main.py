@@ -29,8 +29,8 @@ class Calculadora(QMainWindow):
         self.btn_one.clicked.connect(lambda: self.ingresarValores('1'))
         self.btn_zero.clicked.connect(lambda: self.ingresarValores('0'))
 
-        #Especiales
-        self.btn_multiply.clicked.connect(lambda: self.ingresarValores('*'))
+        # Botones especiales
+        self.btn_multiply.clicked.connect(lambda: self.ingresarValores('*')) # Boton multiplicar
         self.btn_substract.clicked.connect(lambda: self.ingresarValores('-'))
         self.btn_sum.clicked.connect(lambda: self.ingresarValores('+'))
         self.btn_divide.clicked.connect(lambda: self.ingresarValores('/'))
@@ -42,20 +42,42 @@ class Calculadora(QMainWindow):
         self.btn_trapeze.clicked.connect(lambda: self.integralexacta())
         self.btn_trapeze.clicked.connect(lambda: self.integralTrapecio())
         self.btn_simpson.clicked.connect(lambda: self.integralSimsom())
-        self.btn_cleaner.clicked.connect(lambda: self.limpiarTodo())
+        self.btn_cleaner.clicked.connect(lambda: self.limpiarTodo()) # Boton C (limpiar)
+        self.btn_squared.clicked.connect(lambda: self.cuadrado())
+        self.btn_cubed.clicked.connect(lambda: self.cubo())
+        self.btn_elevar.clicked.connect(lambda: self.elevado())
 
-        # Definir la expresión regular para permitir solo 'x', números y los operadores +, -, *, /
-        regex = QRegExp('[x0-9+\\-*/\\s()]+')
+        # Restricciones
+        
+        # Definir la expresión regular para permitir solo 'x', números y los operadores +, -, *, /    
+        regex = QRegExp('[x0-9+\\-*/\\s().]+')
         validacion = QRegExpValidator(regex)
         self.entradadedatos.setValidator(validacion)
         self.txtLimite_Inferior.setValidator(validacion)
         self.txtLimite_Superior.setValidator(validacion)
-
-        #Validar los datos que pongan en n
+        
+        # Validar los datos que pongan en n
         regla = QRegExp('[0-9]')
         validacion2 = QRegExpValidator(regla)
         self.txtSubintervalos.setValidator(validacion2)
 
+# Creando las funciones de los botones  
+
+    #Creando la funcion del cuadrado
+    def cuadrado(self):
+        texto = "**2"
+        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+    
+    #Creando la funcion del cubo
+    def cubo(self):
+        texto = "**3"
+        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+    
+    #Creando la funcion del elevado a la n
+    def elevado(self):
+        texto = "**"
+        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+    
     #Creando la funcion para ingresar los datos
     def ingresarValores(self, tecla):
         if tecla >= '0' and tecla <= '9' or tecla == '(' or tecla == ')' or tecla == '.' or tecla == '*' or tecla == '/' or tecla == '+' or tecla == '-':
@@ -64,8 +86,8 @@ class Calculadora(QMainWindow):
         if tecla == '=':
             resultado = eval(self.entradadedatos.text())
             self.entradadedatos.setText(str(resultado))
-
-    #Creando las operaciones cabronas  
+    
+    # Creando la funcion del boton de raiz cuadrada
     def squaredRoot(self):
         try:
             valor_entrada = float(self.entradadedatos.text())
@@ -81,6 +103,7 @@ class Calculadora(QMainWindow):
 
     #Creando la otra función para la calcular la integral por el trapecio
     def integralTrapecio(self):
+        
         x = symbols('x') #declarar la variable simbolica x
         
         # Verificar si los campos de límites y subintervalos no están vacíos
@@ -88,10 +111,10 @@ class Calculadora(QMainWindow):
             self.lbl_resultTrap.setText("Error: Ingrese todos los límites y el número de subintervalos.")
             return
         
-        a = float(self.txtLimite_Inferior.text())
-        b = float(self.txtLimite_Superior.text())
-        n = int(self.txtSubintervalos.text())
-        funcion_introducida = self.entradadedatos.text()
+        a = float(self.txtLimite_Inferior.text()) # Limite inferior
+        b = float(self.txtLimite_Superior.text()) # Limite Superior
+        n = int(self.txtSubintervalos.text())     # Subintervalos
+        funcion_introducida = self.entradadedatos.text() # Asginandole el nombre de funcion introducida a lo que esta en la entrada de datos
 
         # Convertir la función a una función numérica
         funcion = lambdify(x, funcion_introducida)
@@ -103,6 +126,7 @@ class Calculadora(QMainWindow):
         # Calcular la aproximación de la integral utilizando el método del trapecio
         aprox_integral_trap = trapz(puntos_y, puntos_x)
         self.lbl_resultTrap.setText(f"= {aprox_integral_trap:.4f}")
+           
 
 
     # **! Modificación Alexander
@@ -150,6 +174,7 @@ class Calculadora(QMainWindow):
         integral = integrate(g,(x,a,b))
         self.lbl_valorexacto.setText(f"{integral:.4f}")
     
+    #Creando la funcion de limpiar todo los campos
     def limpiarTodo(self):
         self.txtLimite_Inferior.setText("")
         self.txtLimite_Superior.setText("")
