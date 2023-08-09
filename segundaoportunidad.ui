@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Aproximación de Integral</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>media/iconop.ico</normaloff>media/iconop.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -165,7 +169,7 @@ QLineEdit:hover {
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_2">
                 <property name="leftMargin">
-                 <number>0</number>
+                 <number>3</number>
                 </property>
                 <property name="topMargin">
                  <number>0</number>
@@ -349,6 +353,12 @@ border-bottom-color: rgb(243, 243, 243);*/</string>
                 </property>
                 <item row="0" column="0">
                  <widget class="QFrame" name="frame">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton:hover {
 background-color: rgb(170, 0, 0);
@@ -363,7 +373,10 @@ background-color: rgb(170, 0, 0);
                   <property name="lineWidth">
                    <number>1</number>
                   </property>
-                  <layout class="QGridLayout" name="gridLayout" columnstretch="0">
+                  <layout class="QVBoxLayout" name="verticalLayout_2">
+                   <property name="spacing">
+                    <number>2</number>
+                   </property>
                    <property name="sizeConstraint">
                     <enum>QLayout::SetDefaultConstraint</enum>
                    </property>
@@ -379,11 +392,248 @@ background-color: rgb(170, 0, 0);
                    <property name="bottomMargin">
                     <number>0</number>
                    </property>
-                   <property name="spacing">
-                    <number>0</number>
-                   </property>
-                   <item row="7" column="0">
+                   <item>
+                    <widget class="QPushButton" name="btn_x">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="sizeIncrement">
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Segoe UI Symbol</family>
+                       <pointsize>11</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+
+background-color: #FAF9F6;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+
+}
+
+QPushButton:hover {
+	
+	background-color: #DDDDDD;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>x</string>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>20</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btn_squared">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+
+background-color: #FAF9F6;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+
+}
+
+QPushButton:hover {
+	
+	background-color: #DDDDDD;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>media/squared.png</normaloff>media/squared.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>18</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                     <property name="flat">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btn_cubed">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+
+background-color: #FAF9F6;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+
+}
+
+QPushButton:hover {
+	
+	background-color: #DDDDDD;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>media/cubed.png</normaloff>media/cubed.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>18</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btn_elevar">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+
+background-color: #FAF9F6;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+
+}
+
+QPushButton:hover {
+	
+	background-color: #DDDDDD;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>media/xn.png</normaloff>media/xn.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>18</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btn_root">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+
+background-color: #FAF9F6;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+
+}
+
+QPushButton:hover {
+	
+	background-color: #DDDDDD;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>√</string>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>18</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
                     <widget class="QPushButton" name="btn_ln">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -421,197 +671,17 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="3" column="0">
-                    <widget class="QPushButton" name="btn_elevar">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>40</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-
-background-color: #FAF9F6;
-border-radius: 5px;
-border: 1px solid #CCCCCC;
-
-}
-
-QPushButton:hover {
-	
-	background-color: #DDDDDD;
-}</string>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset>
-                       <normaloff>media/xn.png</normaloff>media/xn.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>18</width>
-                       <height>20</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="1" column="0">
-                    <widget class="QPushButton" name="btn_squared">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>40</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-
-background-color: #FAF9F6;
-border-radius: 5px;
-border: 1px solid #CCCCCC;
-
-}
-
-QPushButton:hover {
-	
-	background-color: #DDDDDD;
-}</string>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset>
-                       <normaloff>media/squared.png</normaloff>media/squared.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>18</width>
-                       <height>20</height>
-                      </size>
-                     </property>
-                     <property name="flat">
-                      <bool>false</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="0">
-                    <widget class="QPushButton" name="btn_cubed">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>40</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-
-background-color: #FAF9F6;
-border-radius: 5px;
-border: 1px solid #CCCCCC;
-
-}
-
-QPushButton:hover {
-	
-	background-color: #DDDDDD;
-}</string>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset>
-                       <normaloff>media/cubed.png</normaloff>media/cubed.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>18</width>
-                       <height>20</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="5" column="0">
-                    <widget class="QPushButton" name="btn_root">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>40</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-
-background-color: #FAF9F6;
-border-radius: 5px;
-border: 1px solid #CCCCCC;
-
-}
-
-QPushButton:hover {
-	
-	background-color: #DDDDDD;
-}</string>
-                     </property>
-                     <property name="text">
-                      <string>√</string>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>18</width>
-                       <height>20</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="0">
-                    <widget class="QPushButton" name="btn_x">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>40</height>
-                      </size>
-                     </property>
-                     <property name="font">
-                      <font>
-                       <family>Segoe UI Symbol</family>
-                       <pointsize>11</pointsize>
-                      </font>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-
-background-color: #FAF9F6;
-border-radius: 5px;
-border: 1px solid #CCCCCC;
-
-}
-
-QPushButton:hover {
-	
-	background-color: #DDDDDD;
-}</string>
-                     </property>
-                     <property name="text">
-                      <string>x</string>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>20</width>
-                       <height>20</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
                   </layout>
                  </widget>
                 </item>
                 <item row="0" column="1">
                  <widget class="QFrame" name="frame_2">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -621,7 +691,10 @@ QPushButton:hover {
                   <property name="lineWidth">
                    <number>1</number>
                   </property>
-                  <layout class="QGridLayout" name="gridLayout_2">
+                  <layout class="QVBoxLayout" name="verticalLayout_3">
+                   <property name="spacing">
+                    <number>2</number>
+                   </property>
                    <property name="leftMargin">
                     <number>0</number>
                    </property>
@@ -634,11 +707,14 @@ QPushButton:hover {
                    <property name="bottomMargin">
                     <number>0</number>
                    </property>
-                   <property name="spacing">
-                    <number>0</number>
-                   </property>
-                   <item row="0" column="0">
+                   <item>
                     <widget class="QPushButton" name="btn_pi">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -677,8 +753,14 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="1" column="0">
+                   <item>
                     <widget class="QPushButton" name="btn_seven">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -715,8 +797,14 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="2" column="0">
+                   <item>
                     <widget class="QPushButton" name="btn_four">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -753,8 +841,14 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="3" column="0">
+                   <item>
                     <widget class="QPushButton" name="btn_one">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -791,8 +885,14 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="4" column="0">
+                   <item>
                     <widget class="QPushButton" name="btn_leftbracket">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -830,8 +930,14 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="5" column="0">
+                   <item>
                     <widget class="QPushButton" name="btn_tan">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -868,13 +974,22 @@ QPushButton:hover {
                 </item>
                 <item row="0" column="2">
                  <widget class="QFrame" name="frame_4">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QGridLayout" name="gridLayout_3">
+                  <layout class="QVBoxLayout" name="verticalLayout_6">
+                   <property name="spacing">
+                    <number>2</number>
+                   </property>
                    <property name="leftMargin">
                     <number>0</number>
                    </property>
@@ -887,11 +1002,14 @@ QPushButton:hover {
                    <property name="bottomMargin">
                     <number>0</number>
                    </property>
-                   <property name="spacing">
-                    <number>0</number>
-                   </property>
-                   <item row="0" column="0">
+                   <item>
                     <widget class="QPushButton" name="btn_e">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -933,8 +1051,14 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="1" column="0">
+                   <item>
                     <widget class="QPushButton" name="btn_eight">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -971,8 +1095,14 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="2" column="0">
+                   <item>
                     <widget class="QPushButton" name="btn_five">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1009,8 +1139,14 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="3" column="0">
+                   <item>
                     <widget class="QPushButton" name="btn_two">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1047,8 +1183,14 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="4" column="0">
+                   <item>
                     <widget class="QPushButton" name="btn_zero">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1085,8 +1227,14 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="5" column="0">
+                   <item>
                     <widget class="QPushButton" name="btn_sin">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1123,6 +1271,12 @@ QPushButton:hover {
                 </item>
                 <item row="0" column="3">
                  <widget class="QFrame" name="frame_9">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -1131,7 +1285,7 @@ QPushButton:hover {
                   </property>
                   <layout class="QVBoxLayout" name="verticalLayout_8" stretch="0,0,0,0,0,0">
                    <property name="spacing">
-                    <number>0</number>
+                    <number>2</number>
                    </property>
                    <property name="leftMargin">
                     <number>0</number>
@@ -1147,6 +1301,12 @@ QPushButton:hover {
                    </property>
                    <item>
                     <widget class="QPushButton" name="btn_cleaner">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1186,6 +1346,12 @@ QPushButton:hover {
                    </item>
                    <item>
                     <widget class="QPushButton" name="btn_nine">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1224,6 +1390,12 @@ QPushButton:hover {
                    </item>
                    <item>
                     <widget class="QPushButton" name="btn_six">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1262,6 +1434,12 @@ QPushButton:hover {
                    </item>
                    <item>
                     <widget class="QPushButton" name="btn_three">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1300,6 +1478,12 @@ QPushButton:hover {
                    </item>
                    <item>
                     <widget class="QPushButton" name="btn_rightbracket">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1339,6 +1523,12 @@ QPushButton:hover {
                    </item>
                    <item>
                     <widget class="QPushButton" name="btn_cos">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1375,13 +1565,22 @@ QPushButton:hover {
                 </item>
                 <item row="0" column="4">
                  <widget class="QFrame" name="frame_10">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QGridLayout" name="gridLayout_5" columnstretch="0">
+                  <layout class="QVBoxLayout" name="verticalLayout_7">
+                   <property name="spacing">
+                    <number>2</number>
+                   </property>
                    <property name="leftMargin">
                     <number>0</number>
                    </property>
@@ -1394,11 +1593,14 @@ QPushButton:hover {
                    <property name="bottomMargin">
                     <number>0</number>
                    </property>
-                   <property name="spacing">
-                    <number>0</number>
-                   </property>
-                   <item row="0" column="0">
+                   <item>
                     <widget class="QPushButton" name="btn_backspace">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1443,41 +1645,14 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="5" column="0">
-                    <widget class="QPushButton" name="btn_sum">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>40</height>
-                      </size>
-                     </property>
-                     <property name="font">
-                      <font>
-                       <family>Segoe UI Symbol</family>
-                       <pointsize>11</pointsize>
-                      </font>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-
-background-color: #FAF9F6;
-border-radius: 5px;
-border: 1px solid #CCCCCC;
-
-}
-
-QPushButton:hover {
-	
-	background-color: #DDDDDD;
-}</string>
-                     </property>
-                     <property name="text">
-                      <string>+</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="0">
+                   <item>
                     <widget class="QPushButton" name="btn_divide">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1515,41 +1690,14 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="4" column="0">
-                    <widget class="QPushButton" name="btn_substract">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>40</height>
-                      </size>
-                     </property>
-                     <property name="font">
-                      <font>
-                       <family>Segoe UI Symbol</family>
-                       <pointsize>11</pointsize>
-                      </font>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-
-background-color: #FAF9F6;
-border-radius: 5px;
-border: 1px solid #CCCCCC;
-
-}
-
-QPushButton:hover {
-	
-	background-color: #DDDDDD;
-}</string>
-                     </property>
-                     <property name="text">
-                      <string>-</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="3" column="0">
+                   <item>
                     <widget class="QPushButton" name="btn_multiply">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -1587,8 +1735,92 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="6" column="0">
+                   <item>
+                    <widget class="QPushButton" name="btn_substract">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Segoe UI Symbol</family>
+                       <pointsize>11</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+
+background-color: #FAF9F6;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+
+}
+
+QPushButton:hover {
+	
+	background-color: #DDDDDD;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>-</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btn_sum">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Segoe UI Symbol</family>
+                       <pointsize>11</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+
+background-color: #FAF9F6;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+
+}
+
+QPushButton:hover {
+	
+	background-color: #DDDDDD;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>+</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
                     <widget class="QPushButton" name="btn_result">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
