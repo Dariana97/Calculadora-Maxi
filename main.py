@@ -80,6 +80,7 @@ class Calculadora(QMainWindow):
         self.lbl_resultSimp.setText("=")
         self.lbl_valorexacto.setText("")
         self.lbl_diference.setText("")
+        self.lbl_Errores.setText("")
 
     # Creando la funcion de backspace
     def borrarCaracter(self):
@@ -128,26 +129,31 @@ class Calculadora(QMainWindow):
     
     # Creando la funcion para ingresar los datos
     def ingresarValores(self, tecla):
-        if tecla >= '0' and tecla <= '9' or tecla == '(' or tecla == ')' or tecla == '.' or tecla == '*' or tecla == '/' or tecla == '+' or tecla == '-':
-            self.entradadedatos.setText(self.entradadedatos.text() + tecla)
+        
+        try:
+            if tecla >= '0' and tecla <= '9' or tecla == '(' or tecla == ')' or tecla == '.' or tecla == '*' or tecla == '/' or tecla == '+' or tecla == '-':
+                self.entradadedatos.setText(self.entradadedatos.text() + tecla)
 
-        if tecla == '=':
-            resultado = eval(self.entradadedatos.text())
-            self.entradadedatos.setText(str(resultado))
-    
+            if tecla == '=':
+                resultado = eval(self.entradadedatos.text())
+                self.entradadedatos.setText(str(resultado))
+        except:
+            self.lbl_Errores.setText("😔 No se pudo realizar la operacion.")
+
     # Creando la funcion del boton de raiz cuadrada
     def squaredRoot(self):
+        
         try:
             valor_entrada = float(self.entradadedatos.text())
             
             if valor_entrada < 0:
-                self.entradadedatos.setText("Entrada inválida")  # Mostrar un mensaje de error para entradas negativas
+                self.entradadedatos.setText("Entrada inválida 😡")  # Mostrar un mensaje de error para entradas negativas
             else:
                 resultado = math.sqrt(valor_entrada)
                 self.entradadedatos.setText(str(resultado))
 
         except ValueError:
-            self.entradadedatos.setText("Entrada inválida")  # Mostrar un mensaje de error para entradas no numéricas
+            self.entradadedatos.setText("Entrada inválida 😡")  # Mostrar un mensaje de error para entradas no numéricas
 
     # Creando la funcion del exponencial
     def exponencial(self):
@@ -160,7 +166,8 @@ class Calculadora(QMainWindow):
         x = symbols('x')  # declarar la variable simbólica x
 
         if not self.txtLimite_Inferior.text() or not self.txtLimite_Superior.text() or not self.txtSubintervalos.text():
-            self.lbl_resultTrap.setText("Error: Ingrese todos los límites y el número de subintervalos.")
+            self.lbl_Errores.setText("⛔ Error: Ingrese todos los límites y el número de subintervalos.")
+        
         else:
             a = float(self.txtLimite_Inferior.text())  # Limite inferior
             b = float(self.txtLimite_Superior.text())  # Limite Superior
@@ -179,27 +186,33 @@ class Calculadora(QMainWindow):
     
     # Creando la otra función para la calcular la integral por Simpson
     def integralSimsom(self):
-        x = symbols('x')
-        a = float(self.txtLimite_Inferior.text())
-        b = float(self.txtLimite_Superior.text())
-        n = int(self.txtSubintervalos.text())
-        funcion_Introducida = self.entradadedatos.text()
-
-        funcion = lambdify(x, funcion_Introducida)
-
-        if n % 2 != 0:
-            self.lbl_resultSimp.setText("Error!ld El número de subintervalos debe ser par para el método de Simpson.")
-            return
         
-        h = (b - a) / n
-        x_vals = [a + i * h for i in range(n+1)]
-        y_vals = [funcion(x_val) for x_val in x_vals]
-    
-        suma_pares = sum(y_vals[2:n-1:2])
-        suma_impares = sum(y_vals[1:n:2])
-    
-        integral_aprox = (h / 3) * (y_vals[0] + 4 * suma_impares + 2 * suma_pares + y_vals[n])
-        self.lbl_resultSimp.setText(f"= {integral_aprox:.4f}")
+        if not self.txtLimite_Inferior.text() or not self.txtLimite_Superior.text() or not self.txtSubintervalos.text():
+            self.lbl_Errores.setText("⛔ Error! Ingrese todos los límites y el número de subintervalos.")
+        
+        else:
+            
+            x = symbols('x')
+            a = float(self.txtLimite_Inferior.text())
+            b = float(self.txtLimite_Superior.text())
+            n = int(self.txtSubintervalos.text())
+            funcion_Introducida = self.entradadedatos.text()
+
+            funcion = lambdify(x, funcion_Introducida)
+
+            if n % 2 != 0:
+                self.lbl_Errores.setText("⛔ Error! El número de subintervalos debe ser par para el método de Simpson.")
+                return
+            
+            h = (b - a) / n
+            x_vals = [a + i * h for i in range(n+1)]
+            y_vals = [funcion(x_val) for x_val in x_vals]
+        
+            suma_pares = sum(y_vals[2:n-1:2])
+            suma_impares = sum(y_vals[1:n:2])
+        
+            integral_aprox = (h / 3) * (y_vals[0] + 4 * suma_impares + 2 * suma_pares + y_vals[n])
+            self.lbl_resultSimp.setText(f"= {integral_aprox:.4f}")
 
     # Creando la funcion para la integral exacta
     def integralexacta(self):
@@ -221,13 +234,11 @@ class Calculadora(QMainWindow):
             integral = integrate(g,(x,a,b))
 
             # Asignamos el valor de la integral a el label que mostrara el resultado
-            
-            # Formatear el resultado de la integral si es un número finito
-            result_text = f"{integral:.4f}" if integral.is_finite else "La integral exacta no es un número finito."
+            result_text = f"{integral:.4f}" if integral.is_finite else "😶‍🌫️ La integral exacta no es un número finito."
             self.lbl_valorexacto.setText(result_text)
     
         except ValueError:
-            self.entradadedatos.setText("Entrada inválida")
+            self.entradadedatos.setText("⛔ Entrada inválida")
      
      # Creando la función para calcular la diferencia en trapecio
     
@@ -239,17 +250,20 @@ class Calculadora(QMainWindow):
 
             diferencia = abs(resultado_trapecio - valor_exacto)
             self.lbl_diference.setText(f"Trap: {diferencia:.4f}")
+        
         except ValueError:
             self.lbl_diference.setText("")
     
     # Creando la funcion para calcular la diferencia en cuanto al Simpson
     def calcularDiferenciaSimpson(self):
+        
         try:
             valor_exacto = float(self.lbl_valorexacto.text())
             resultado_simpson = float(self.lbl_resultSimp.text()[1:])  # Se omite el primer caracter "="
 
             diferencia = abs(resultado_simpson - valor_exacto)
             self.lbl_diference.setText(f"Simp: {diferencia:.4f}")
+        
         except ValueError:
             self.lbl_diference.setText("")
 

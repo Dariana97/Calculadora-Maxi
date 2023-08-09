@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1039</width>
+    <width>1154</width>
     <height>456</height>
    </rect>
   </property>
@@ -1871,32 +1871,93 @@ QPushButton:hover {
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <widget class="QPushButton" name="btn_trapeze">
-             <property name="geometry">
-              <rect>
-               <x>20</x>
-               <y>30</y>
-               <width>86</width>
-               <height>30</height>
-              </rect>
+            <layout class="QVBoxLayout" name="verticalLayout_9" stretch="2,0,2">
+             <property name="spacing">
+              <number>0</number>
              </property>
-             <property name="minimumSize">
-              <size>
-               <width>30</width>
-               <height>30</height>
-              </size>
+             <property name="leftMargin">
+              <number>0</number>
              </property>
-             <property name="font">
-              <font>
-               <family>Segoe UI Variable</family>
-               <pointsize>10</pointsize>
-              </font>
+             <property name="topMargin">
+              <number>0</number>
              </property>
-             <property name="cursor">
-              <cursorShape>PointingHandCursor</cursorShape>
+             <property name="rightMargin">
+              <number>0</number>
              </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QFrame" name="frame_7">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <widget class="QLabel" name="lbl_resultSimp">
+                <property name="geometry">
+                 <rect>
+                  <x>120</x>
+                  <y>70</y>
+                  <width>251</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Variable</family>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>=</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="btn_simpson">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>70</y>
+                  <width>86</width>
+                  <height>30</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Variable</family>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
 	background-color: rgb(25, 117, 197);
 	color: #ffffff;
 	border-radius: 5px;
@@ -1905,37 +1966,77 @@ QPushButton:hover {
 QPushButton:hover {
 	background-color: #47B1E8;
 }</string>
-             </property>
-             <property name="text">
-              <string>Trapecio</string>
-             </property>
-            </widget>
-            <widget class="QPushButton" name="btn_simpson">
-             <property name="geometry">
-              <rect>
-               <x>20</x>
-               <y>80</y>
-               <width>86</width>
-               <height>30</height>
-              </rect>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Segoe UI Variable</family>
-               <pointsize>10</pointsize>
-              </font>
-             </property>
-             <property name="cursor">
-              <cursorShape>PointingHandCursor</cursorShape>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
+                </property>
+                <property name="text">
+                 <string>Simpson</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="lbl_resultTrap">
+                <property name="geometry">
+                 <rect>
+                  <x>120</x>
+                  <y>20</y>
+                  <width>241</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>25</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Variable</family>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="text">
+                 <string>=</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="btn_trapeze">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>20</y>
+                  <width>86</width>
+                  <height>30</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Variable</family>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
 	background-color: rgb(25, 117, 197);
 	color: #ffffff;
 	border-radius: 5px;
@@ -1944,174 +2045,189 @@ QPushButton:hover {
 QPushButton:hover {
 	background-color: #47B1E8;
 }</string>
-             </property>
-             <property name="text">
-              <string>Simpson</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="lbl_resultTrap">
-             <property name="geometry">
-              <rect>
-               <x>120</x>
-               <y>30</y>
-               <width>211</width>
-               <height>25</height>
-              </rect>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>25</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Segoe UI Variable</family>
-               <pointsize>10</pointsize>
-              </font>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Plain</enum>
-             </property>
-             <property name="text">
-              <string>=</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="lbl_resultSimp">
-             <property name="geometry">
-              <rect>
-               <x>120</x>
-               <y>80</y>
-               <width>211</width>
-               <height>31</height>
-              </rect>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>25</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Segoe UI Variable</family>
-               <pointsize>10</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>=</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="lbl_diference">
-             <property name="geometry">
-              <rect>
-               <x>30</x>
-               <y>220</y>
-               <width>291</width>
-               <height>17</height>
-              </rect>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Segoe UI Variable</family>
-               <pointsize>10</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>TextLabel</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="lbl_valorexacto">
-             <property name="geometry">
-              <rect>
-               <x>30</x>
-               <y>160</y>
-               <width>291</width>
-               <height>20</height>
-              </rect>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Segoe UI Variable</family>
-               <pointsize>10</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>TextLabel</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label_8">
-             <property name="geometry">
-              <rect>
-               <x>30</x>
-               <y>200</y>
-               <width>201</width>
-               <height>20</height>
-              </rect>
-             </property>
-             <property name="font">
-              <font>
-               <family>Segoe UI Variable Text Semibold</family>
-               <pointsize>10</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="text">
-              <string>Diferencia =</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label_11">
-             <property name="geometry">
-              <rect>
-               <x>30</x>
-               <y>140</y>
-               <width>211</width>
-               <height>20</height>
-              </rect>
-             </property>
-             <property name="font">
-              <font>
-               <family>Segoe UI Variable Text Semibold</family>
-               <pointsize>10</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
-             <property name="text">
-              <string>Valor exacto =</string>
-             </property>
-            </widget>
+                </property>
+                <property name="text">
+                 <string>Trapecio</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="lbl_diference">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>180</y>
+                  <width>291</width>
+                  <height>17</height>
+                 </rect>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Variable</family>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="lbl_valorexacto">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>130</y>
+                  <width>291</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Variable</family>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_11">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>110</y>
+                  <width>211</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Variable Text Semibold</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="text">
+                 <string>Valor exacto =</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_8">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>160</y>
+                  <width>201</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI Variable Text Semibold</family>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="text">
+                 <string>Diferencia =</string>
+                </property>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frame_12">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_10">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>20</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="lbl_Errores">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>50</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Segoe UI Variable</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(170, 0, 0);</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
