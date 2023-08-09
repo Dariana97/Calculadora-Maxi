@@ -53,7 +53,7 @@ class Calculadora(QMainWindow):
         self.btn_trapeze.clicked.connect(lambda: self.calcularDiferenciaTrapecio())
         self.btn_simpson.clicked.connect(lambda: self.calcularDiferenciaSimpson())
         self.btn_pi.clicked.connect(lambda: self.pi())
-
+        
         # Restricciones
         
         # Definir la expresión regular para permitir solo 'x', números y los operadores +, -, *, /    
@@ -102,14 +102,14 @@ class Calculadora(QMainWindow):
         texto = "cos("
         self.entradadedatos.setText(self.entradadedatos.text() + texto)
 
-    # Creando la funcion de sin
-    def funcionSen(self):
-        texto = "sin("
-        self.entradadedatos.setText(self.entradadedatos.text() + texto)
-
     # Creando la funcion de tan
     def funcionTan(self):
         texto = "tan("
+        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+
+    # Creando la funcion de sin
+    def funcionSin(self):
+        texto = "sin("
         self.entradadedatos.setText(self.entradadedatos.text() + texto)
 
     #Creando la funcion del cuadrado
@@ -166,7 +166,7 @@ class Calculadora(QMainWindow):
         x = symbols('x')  # declarar la variable simbólica x
 
         if not self.txtLimite_Inferior.text() or not self.txtLimite_Superior.text() or not self.txtSubintervalos.text():
-            self.lbl_Errores.setText("⛔ Error: Ingrese todos los límites y el número de subintervalos.")
+            self.lbl_Errores.setText("⛔ Error! Ingrese todos los límites y el número de subintervalos.")
         
         else:
             a = float(self.txtLimite_Inferior.text())  # Limite inferior

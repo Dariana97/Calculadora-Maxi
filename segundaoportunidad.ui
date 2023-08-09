@@ -10,6 +10,12 @@
     <height>456</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Segoe UI Variable</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Aproximación de Integral</string>
   </property>
@@ -2078,7 +2084,7 @@ QPushButton:hover {
                  </font>
                 </property>
                 <property name="text">
-                 <string>TextLabel</string>
+                 <string/>
                 </property>
                </widget>
                <widget class="QLabel" name="lbl_valorexacto">
@@ -2109,7 +2115,7 @@ QPushButton:hover {
                  </font>
                 </property>
                 <property name="text">
-                 <string>TextLabel</string>
+                 <string/>
                 </property>
                </widget>
                <widget class="QLabel" name="label_11">
@@ -2181,7 +2187,7 @@ QPushButton:hover {
                  <number>0</number>
                 </property>
                 <property name="rightMargin">
-                 <number>0</number>
+                 <number>20</number>
                 </property>
                 <property name="bottomMargin">
                  <number>0</number>
