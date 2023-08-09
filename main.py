@@ -37,9 +37,9 @@ class Calculadora(QMainWindow):
         self.btn_result.clicked.connect(lambda: self.ingresarValores('='))
         self.btn_root.clicked.connect(lambda: self.squaredRoot())
         self.btn_trapeze.clicked.connect(lambda: self.integralexacta())
-        self.btn_simpson.clicked.connect(lambda: self.integralSimsom())
         self.btn_trapeze.clicked.connect(lambda: self.integralTrapecio())
         self.btn_simpson.clicked.connect(lambda: self.integralexacta())
+        self.btn_simpson.clicked.connect(lambda: self.integralSimsom())
         self.btn_cleaner.clicked.connect(lambda: self.limpiarTodo()) # Boton C (limpiar)
         self.btn_squared.clicked.connect(lambda: self.cuadrado())
         self.btn_cubed.clicked.connect(lambda: self.cubo())
@@ -49,6 +49,10 @@ class Calculadora(QMainWindow):
         self.btn_cos.clicked.connect(lambda: self.funcionCos())
         self.btn_sin.clicked.connect(lambda: self.funcionSin())
         self.btn_tan.clicked.connect(lambda: self.funcionTan())
+        self.btn_backspace.clicked.connect(lambda: self.borrarCaracter())
+        self.btn_trapeze.clicked.connect(lambda: self.calcularDiferenciaTrapecio())
+        self.btn_simpson.clicked.connect(lambda: self.calcularDiferenciaSimpson())
+        self.btn_pi.clicked.connect(lambda: self.pi())
 
         # Restricciones
         
@@ -60,16 +64,37 @@ class Calculadora(QMainWindow):
         self.txtLimite_Superior.setValidator(validacion)
         
         # Validar los datos que pongan en n
-        regla = QRegExp('[0-9]')
+        regla = QRegExp('[0-9]+')
         validacion2 = QRegExpValidator(regla)
         self.txtSubintervalos.setValidator(validacion2)
 
 # Creando las funciones de los botones  
 
+    #Creando la funcion de limpiar todo los campos
+    def limpiarTodo(self):
+        self.txtLimite_Inferior.setText("")
+        self.txtLimite_Superior.setText("")
+        self.txtSubintervalos.setText("")
+        self.entradadedatos.setText("")
+        self.lbl_resultTrap.setText("=")
+        self.lbl_resultSimp.setText("=")
+        self.lbl_valorexacto.setText("")
+        self.lbl_diference.setText("")
+
+    # Creando la funcion de backspace
+    def borrarCaracter(self):
+        texto_actual = self.entradadedatos.text()
+        nuevo_texto = texto_actual[:-1]  
+        self.entradadedatos.setText(nuevo_texto)
+
     # Creando la funcion de X
     def agregandoX(self):
         text = "*x"
         self.entradadedatos.setText(self.entradadedatos.text() + text)
+
+    # Creando la funcion de pi
+    def pi(self):
+        self.entradadedatos.setText(self.entradadedatos.text() + str(pi))
 
     # Creando la funcion de cos
     def funcionCos(self):
@@ -132,28 +157,25 @@ class Calculadora(QMainWindow):
     # Creando la otra función para la calcular la integral por el trapecio
     def integralTrapecio(self):
         
-        x = symbols('x') #declarar la variable simbolica x
-        
-        # Verificar si los campos de límites y subintervalos no están vacíos
+        x = symbols('x')  # declarar la variable simbólica x
+
         if not self.txtLimite_Inferior.text() or not self.txtLimite_Superior.text() or not self.txtSubintervalos.text():
             self.lbl_resultTrap.setText("Error: Ingrese todos los límites y el número de subintervalos.")
-            return
-        
-        a = float(self.txtLimite_Inferior.text()) # Limite inferior
-        b = float(self.txtLimite_Superior.text()) # Limite Superior
-        n = int(self.txtSubintervalos.text())     # Subintervalos
-        funcion_introducida = self.entradadedatos.text() # Asginandole el nombre de funcion introducida a lo que esta en la entrada de datos
+        else:
+            a = float(self.txtLimite_Inferior.text())  # Limite inferior
+            b = float(self.txtLimite_Superior.text())  # Limite Superior
+            n = int(self.txtSubintervalos.text())  # Subintervalos
+            funcion_introducida = self.entradadedatos.text()  # Asignando la función introducida desde la entrada de datos
 
-        # Convertir la función a una función numérica
-        funcion = lambdify(x, funcion_introducida)
+            funcion = parse_expr(funcion_introducida)
 
-        # Calcular los puntos (x, y) para el método del trapecio
-        puntos_x = [a + i * (b - a) / n for i in range(n + 1)]
-        puntos_y = [funcion(x_val) for x_val in puntos_x]
+            # Calcular los puntos (x, y) para el método del trapecio
+            puntos_x = [a + i * (b - a) / n for i in range(n + 1)]
+            puntos_y = [funcion.subs(x, x_val) for x_val in puntos_x]
 
-        # Calcular la aproximación de la integral utilizando el método del trapecio
-        aprox_integral_trap = trapz(puntos_y, puntos_x)
-        self.lbl_resultTrap.setText(f"= {aprox_integral_trap:.4f}")
+            # Calcular la aproximación de la integral utilizando el método del trapecio
+            aprox_integral_trap = trapz(puntos_y, puntos_x)
+            self.lbl_resultTrap.setText(f"= {aprox_integral_trap:.4f}")
     
     # Creando la otra función para la calcular la integral por Simpson
     def integralSimsom(self):
@@ -179,28 +201,59 @@ class Calculadora(QMainWindow):
         integral_aprox = (h / 3) * (y_vals[0] + 4 * suma_impares + 2 * suma_pares + y_vals[n])
         self.lbl_resultSimp.setText(f"= {integral_aprox:.4f}")
 
-    #Creando la funcion para la integral exacta
+    # Creando la funcion para la integral exacta
     def integralexacta(self):
-        x = symbols('x') #declarar la x
-        a = float(self.txtLimite_Inferior.text())
-        b = float(self.txtLimite_Superior.text())
-        funcion_introducida = self.entradadedatos.text()
-        g = parse_expr(funcion_introducida)
-        integral = integrate(g,(x,a,b))
-        self.lbl_valorexacto.setText(f"{integral:.4f}")
-    
-    #Creando la funcion de limpiar todo los campos
-    def limpiarTodo(self):
-        self.txtLimite_Inferior.setText("")
-        self.txtLimite_Superior.setText("")
-        self.txtSubintervalos.setText("")
-        self.entradadedatos.setText("")
-        self.lbl_resultTrap.setText("=")
-        self.lbl_resultSimp.setText("=")
-        self.lbl_valorexacto.setText("")
-        self.lbl_diference.setText("")
+        
+        try:
+            # Declaramos a x
+            x = symbols('x') 
+            
+            # Limites de la integral
+            a = float(self.txtLimite_Inferior.text())
+            b = float(self.txtLimite_Superior.text())
 
-#Abre la interfaz gráfica de la calculadora
+            # Le pasamos lo que esta en el txt entradadedatos a una variable
+            funcion_introducida = self.entradadedatos.text()
+
+            g = parse_expr(funcion_introducida)
+
+            # Calculamos la integral
+            integral = integrate(g,(x,a,b))
+
+            # Asignamos el valor de la integral a el label que mostrara el resultado
+            
+            # Formatear el resultado de la integral si es un número finito
+            result_text = f"{integral:.4f}" if integral.is_finite else "La integral exacta no es un número finito."
+            self.lbl_valorexacto.setText(result_text)
+    
+        except ValueError:
+            self.entradadedatos.setText("Entrada inválida")
+     
+     # Creando la función para calcular la diferencia en trapecio
+    
+    # Creando la funcion para calcular la diferencia en cuanto al trapecio
+    def calcularDiferenciaTrapecio(self):
+        try:
+            valor_exacto = float(self.lbl_valorexacto.text())
+            resultado_trapecio = float(self.lbl_resultTrap.text()[1:])  # Se omite el primer caracter "="
+
+            diferencia = abs(resultado_trapecio - valor_exacto)
+            self.lbl_diference.setText(f"Trap: {diferencia:.4f}")
+        except ValueError:
+            self.lbl_diference.setText("")
+    
+    # Creando la funcion para calcular la diferencia en cuanto al Simpson
+    def calcularDiferenciaSimpson(self):
+        try:
+            valor_exacto = float(self.lbl_valorexacto.text())
+            resultado_simpson = float(self.lbl_resultSimp.text()[1:])  # Se omite el primer caracter "="
+
+            diferencia = abs(resultado_simpson - valor_exacto)
+            self.lbl_diference.setText(f"Simp: {diferencia:.4f}")
+        except ValueError:
+            self.lbl_diference.setText("")
+
+# Abre y cierra la interfaz gráfica de la calculadora
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     GUI = Calculadora()

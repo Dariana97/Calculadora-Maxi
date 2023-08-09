@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>844</width>
+    <width>1039</width>
     <height>456</height>
    </rect>
   </property>
@@ -1722,7 +1722,7 @@ QPushButton:hover {
               <rect>
                <x>120</x>
                <y>30</y>
-               <width>141</width>
+               <width>211</width>
                <height>25</height>
               </rect>
              </property>
@@ -1734,7 +1734,7 @@ QPushButton:hover {
              </property>
              <property name="maximumSize">
               <size>
-               <width>150</width>
+               <width>16777215</width>
                <height>16777215</height>
               </size>
              </property>
@@ -1755,8 +1755,8 @@ QPushButton:hover {
              <property name="geometry">
               <rect>
                <x>120</x>
-               <y>79</y>
-               <width>141</width>
+               <y>80</y>
+               <width>211</width>
                <height>31</height>
               </rect>
              </property>
@@ -1768,7 +1768,7 @@ QPushButton:hover {
              </property>
              <property name="maximumSize">
               <size>
-               <width>150</width>
+               <width>16777215</width>
                <height>16777215</height>
               </size>
              </property>
@@ -1787,13 +1787,13 @@ QPushButton:hover {
               <rect>
                <x>30</x>
                <y>220</y>
-               <width>100</width>
+               <width>291</width>
                <height>17</height>
               </rect>
              </property>
              <property name="maximumSize">
               <size>
-               <width>100</width>
+               <width>16777215</width>
                <height>16777215</height>
               </size>
              </property>
@@ -1812,13 +1812,13 @@ QPushButton:hover {
               <rect>
                <x>30</x>
                <y>160</y>
-               <width>100</width>
+               <width>291</width>
                <height>20</height>
               </rect>
              </property>
              <property name="maximumSize">
               <size>
-               <width>100</width>
+               <width>16777215</width>
                <height>16777215</height>
               </size>
              </property>
