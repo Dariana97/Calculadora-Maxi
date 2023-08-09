@@ -41,16 +41,11 @@ class Calculadora(QMainWindow):
         self.btn_root.clicked.connect(lambda: self.squaredRoot())
         self.btn_trapeze.clicked.connect(lambda: self.integralexacta())
         self.btn_trapeze.clicked.connect(lambda: self.integralTrapecio())
-        self.btn_simpson.clicked.connect(lambda: self.integralSimsom())
-        self.btn_cleaner.clicked.connect(lambda: self.limpiarTodo()) # Boton C (limpiar)
-        self.btn_squared.clicked.connect(lambda: self.cuadrado())
-        self.btn_cubed.clicked.connect(lambda: self.cubo())
-        self.btn_elevar.clicked.connect(lambda: self.elevado())
-
-        # Restricciones
         
-        # Definir la expresión regular para permitir solo 'x', números y los operadores +, -, *, /    
-        regex = QRegExp('[x0-9+\\-*/\\s().]+')
+        self.btn_cleaner.clicked.connect(lambda: self.limpiarTodo())
+
+        # Definir la expresión regular para permitir solo 'x', números y los operadores +, -, *, /
+        regex = QRegExp('[x0-9+\\-*/\\s()]+')
         validacion = QRegExpValidator(regex)
         self.entradadedatos.setValidator(validacion)
         self.txtLimite_Inferior.setValidator(validacion)
@@ -126,44 +121,7 @@ class Calculadora(QMainWindow):
         # Calcular la aproximación de la integral utilizando el método del trapecio
         aprox_integral_trap = trapz(puntos_y, puntos_x)
         self.lbl_resultTrap.setText(f"= {aprox_integral_trap:.4f}")
-           
-
-
-    # **! Modificación Alexander
-
-    def integralSimsom(self):
-        x = symbols('x')
-        a = float(self.txtLimite_Inferior.text())
-        b = float(self.txtLimite_Superior.text())
-        n = int(self.txtSubintervalos.text())
-        funcion_Introducida = self.entradadedatos.text()
-
-        funcion = lambdify(x, funcion_Introducida)
-
-        if n % 2 != 0:
-            self.lbl_resultSimp.setText("Error!ld El número de subintervalos debe ser par para el método de Simpson.")
-            return
-        
-        h = (b - a) / n
-        x_vals = [a + i * h for i in range(n+1)]
-        y_vals = [funcion(x_val) for x_val in x_vals]
-    
-        suma_pares = sum(y_vals[2:n-1:2])
-        suma_impares = sum(y_vals[1:n:2])
-    
-        integral_aprox = (h / 3) * (y_vals[0] + 4 * suma_impares + 2 * suma_pares + y_vals[n])
-
-        self.lbl_valorexacto.setText(f"{integral_aprox:.4f}")
-        self.lbl_resultSimp.setText(f"= {integral_aprox:.4f}")
-    
-
-    # **!Creando función de lograritmo natural (ln)
-
-    def logaritmoNatural(self):
-        self.lbl_resultSimp.setText("Ln Conectado")
-        return 0
-    
-
+            
     #Creando la funcion para la integral exacta
     def integralexacta(self):
         x = symbols('x') #declarar la x
