@@ -37,12 +37,18 @@ class Calculadora(QMainWindow):
         self.btn_result.clicked.connect(lambda: self.ingresarValores('='))
         self.btn_root.clicked.connect(lambda: self.squaredRoot())
         self.btn_trapeze.clicked.connect(lambda: self.integralexacta())
-        self.btn_trapeze.clicked.connect(lambda: self.integralTrapecio())
         self.btn_simpson.clicked.connect(lambda: self.integralSimsom())
+        self.btn_trapeze.clicked.connect(lambda: self.integralTrapecio())
+        self.btn_simpson.clicked.connect(lambda: self.integralexacta())
         self.btn_cleaner.clicked.connect(lambda: self.limpiarTodo()) # Boton C (limpiar)
         self.btn_squared.clicked.connect(lambda: self.cuadrado())
         self.btn_cubed.clicked.connect(lambda: self.cubo())
         self.btn_elevar.clicked.connect(lambda: self.elevado())
+        self.btn_e.clicked.connect(lambda: self.exponencial())
+        self.btn_x.clicked.connect(lambda: self.agregandoX())
+        self.btn_cos.clicked.connect(lambda: self.funcionCos())
+        self.btn_sin.clicked.connect(lambda: self.funcionSin())
+        self.btn_tan.clicked.connect(lambda: self.funcionTan())
 
         # Restricciones
         
@@ -60,22 +66,42 @@ class Calculadora(QMainWindow):
 
 # Creando las funciones de los botones  
 
+    # Creando la funcion de X
+    def agregandoX(self):
+        text = "*x"
+        self.entradadedatos.setText(self.entradadedatos.text() + text)
+
+    # Creando la funcion de cos
+    def funcionCos(self):
+        texto = "cos("
+        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+
+    # Creando la funcion de sin
+    def funcionSen(self):
+        texto = "sin("
+        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+
+    # Creando la funcion de tan
+    def funcionTan(self):
+        texto = "tan("
+        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+
     #Creando la funcion del cuadrado
     def cuadrado(self):
         texto = "**2"
         self.entradadedatos.setText(self.entradadedatos.text() + texto)
-    
-    #Creando la funcion del cubo
+
+    # Creando la funcion del cubo
     def cubo(self):
         texto = "**3"
         self.entradadedatos.setText(self.entradadedatos.text() + texto)
     
-    #Creando la funcion del elevado a la n
+    # Creando la funcion del elevado a la n
     def elevado(self):
         texto = "**"
         self.entradadedatos.setText(self.entradadedatos.text() + texto)
     
-    #Creando la funcion para ingresar los datos
+    # Creando la funcion para ingresar los datos
     def ingresarValores(self, tecla):
         if tecla >= '0' and tecla <= '9' or tecla == '(' or tecla == ')' or tecla == '.' or tecla == '*' or tecla == '/' or tecla == '+' or tecla == '-':
             self.entradadedatos.setText(self.entradadedatos.text() + tecla)
@@ -98,7 +124,12 @@ class Calculadora(QMainWindow):
         except ValueError:
             self.entradadedatos.setText("Entrada inválida")  # Mostrar un mensaje de error para entradas no numéricas
 
-    #Creando la otra función para la calcular la integral por el trapecio
+    # Creando la funcion del exponencial
+    def exponencial(self):
+        text = "exp("
+        self.entradadedatos.setText(self.entradadedatos.text() + text)
+
+    # Creando la otra función para la calcular la integral por el trapecio
     def integralTrapecio(self):
         
         x = symbols('x') #declarar la variable simbolica x
@@ -146,8 +177,6 @@ class Calculadora(QMainWindow):
         suma_impares = sum(y_vals[1:n:2])
     
         integral_aprox = (h / 3) * (y_vals[0] + 4 * suma_impares + 2 * suma_pares + y_vals[n])
-
-        self.lbl_valorexacto.setText(f"{integral_aprox:.4f}")
         self.lbl_resultSimp.setText(f"= {integral_aprox:.4f}")
 
     #Creando la funcion para la integral exacta

@@ -382,7 +382,83 @@ background-color: rgb(170, 0, 0);
                    <property name="spacing">
                     <number>0</number>
                    </property>
-                   <item row="0" column="0">
+                   <item row="7" column="0">
+                    <widget class="QPushButton" name="btn_ln">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Segoe UI Symbol</family>
+                       <pointsize>11</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+
+background-color: #FAF9F6;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+
+}
+
+QPushButton:hover {
+	
+	background-color: #DDDDDD;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>ln</string>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>18</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="0">
+                    <widget class="QPushButton" name="btn_elevar">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+
+background-color: #FAF9F6;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+
+}
+
+QPushButton:hover {
+	
+	background-color: #DDDDDD;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>media/xn.png</normaloff>media/xn.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>18</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
                     <widget class="QPushButton" name="btn_squared">
                      <property name="minimumSize">
                       <size>
@@ -422,7 +498,7 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="1" column="0">
+                   <item row="2" column="0">
                     <widget class="QPushButton" name="btn_cubed">
                      <property name="minimumSize">
                       <size>
@@ -459,44 +535,7 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="2" column="0">
-                    <widget class="QPushButton" name="btn_elevar">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>40</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-
-background-color: #FAF9F6;
-border-radius: 5px;
-border: 1px solid #CCCCCC;
-
-}
-
-QPushButton:hover {
-	
-	background-color: #DDDDDD;
-}</string>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset>
-                       <normaloff>media/xn.png</normaloff>media/xn.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>18</width>
-                       <height>20</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="3" column="0">
+                   <item row="5" column="0">
                     <widget class="QPushButton" name="btn_root">
                      <property name="minimumSize">
                       <size>
@@ -529,8 +568,8 @@ QPushButton:hover {
                      </property>
                     </widget>
                    </item>
-                   <item row="4" column="0">
-                    <widget class="QPushButton" name="btn_log">
+                   <item row="0" column="0">
+                    <widget class="QPushButton" name="btn_x">
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
@@ -558,50 +597,11 @@ QPushButton:hover {
 }</string>
                      </property>
                      <property name="text">
-                      <string>log</string>
+                      <string>x</string>
                      </property>
                      <property name="iconSize">
                       <size>
                        <width>20</width>
-                       <height>20</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="5" column="0">
-                    <widget class="QPushButton" name="btn_ln">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>40</height>
-                      </size>
-                     </property>
-                     <property name="font">
-                      <font>
-                       <family>Segoe UI Symbol</family>
-                       <pointsize>11</pointsize>
-                      </font>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-
-background-color: #FAF9F6;
-border-radius: 5px;
-border: 1px solid #CCCCCC;
-
-}
-
-QPushButton:hover {
-	
-	background-color: #DDDDDD;
-}</string>
-                     </property>
-                     <property name="text">
-                      <string>ln</string>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>18</width>
                        <height>20</height>
                       </size>
                      </property>
