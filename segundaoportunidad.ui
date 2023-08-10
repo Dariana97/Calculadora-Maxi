@@ -21,11 +21,13 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>media/iconop.ico</normaloff>media/iconop.ico</iconset>
+    <normaloff>media/icono.png</normaloff>media/icono.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(243, 243, 243);</string>
+    <string notr="true">/*background-color: rgb(243, 243, 243);*/
+background-color: rgb(255, 170, 0);
+</string>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <property name="leftMargin">
@@ -42,6 +44,10 @@
     </property>
     <item>
      <widget class="QFrame" name="frame_background">
+      <property name="styleSheet">
+       <string notr="true">/*background-color: rgb(243, 243, 243);*/
+background-color:rgba(243, 243, 243, 1);</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -98,7 +104,7 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,0,2">
              <property name="leftMargin">
-              <number>0</number>
+              <number>5</number>
              </property>
              <property name="topMargin">
               <number>0</number>
@@ -167,6 +173,14 @@ QLineEdit:hover {
              </item>
              <item>
               <widget class="QFrame" name="frame_6">
+               <property name="styleSheet">
+                <string notr="true">QFrame {
+	background-color: rgba(114, 191, 171, 1);
+	border-radius: 5px;
+	padding: 4px;
+}
+</string>
+               </property>
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
                </property>
@@ -174,8 +188,11 @@ QLineEdit:hover {
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <property name="spacing">
+                 <number>4</number>
+                </property>
                 <property name="leftMargin">
-                 <number>3</number>
+                 <number>2</number>
                 </property>
                 <property name="topMargin">
                  <number>0</number>
@@ -190,12 +207,20 @@ QLineEdit:hover {
                  <widget class="QLabel" name="label_2">
                   <property name="font">
                    <font>
-                    <family>Segoe UI Variable</family>
+                    <family>Segoe UI Variable Text</family>
                     <pointsize>10</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
                    </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: #ffffff;</string>
                   </property>
                   <property name="text">
                    <string>Introduzca los límites:</string>
+                  </property>
+                  <property name="margin">
+                   <number>0</number>
                   </property>
                  </widget>
                 </item>
@@ -203,9 +228,14 @@ QLineEdit:hover {
                  <widget class="QLabel" name="label_3">
                   <property name="font">
                    <font>
-                    <family>Segoe UI Variable</family>
+                    <family>Segoe UI Variable Text</family>
                     <pointsize>10</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
                    </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: #ffffff;</string>
                   </property>
                   <property name="text">
                    <string>a =</string>
@@ -227,8 +257,8 @@ QLineEdit:hover {
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">/*border:1px solid #F7F2EC;
-border-bottom-color: rgb(243, 243, 243);*/</string>
+                   <string notr="true">border:1px solid #F7F2EC;
+border-bottom-color: rgb(243, 243, 243);</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -242,9 +272,14 @@ border-bottom-color: rgb(243, 243, 243);*/</string>
                  <widget class="QLabel" name="label_4">
                   <property name="font">
                    <font>
-                    <family>Segoe UI Variable</family>
+                    <family>Segoe UI Variable Text</family>
                     <pointsize>10</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
                    </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: #ffffff;</string>
                   </property>
                   <property name="text">
                    <string>b =</string>
@@ -265,6 +300,10 @@ border-bottom-color: rgb(243, 243, 243);*/</string>
                     <pointsize>10</pointsize>
                    </font>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">border:1px solid #F7F2EC;
+border-bottom-color: rgb(243, 243, 243);</string>
+                  </property>
                   <property name="text">
                    <string/>
                   </property>
@@ -280,9 +319,14 @@ border-bottom-color: rgb(243, 243, 243);*/</string>
                  <widget class="QLabel" name="label_5">
                   <property name="font">
                    <font>
-                    <family>Segoe UI Variable</family>
+                    <family>Segoe UI Variable Text</family>
                     <pointsize>10</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
                    </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: #ffffff;</string>
                   </property>
                   <property name="text">
                    <string>n =</string>
@@ -302,6 +346,10 @@ border-bottom-color: rgb(243, 243, 243);*/</string>
                     <family>Segoe UI Variable</family>
                     <pointsize>10</pointsize>
                    </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border:1px solid #F7F2EC;
+border-bottom-color: rgb(243, 243, 243);</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -343,7 +391,7 @@ border-bottom-color: rgb(243, 243, 243);*/</string>
                </property>
                <layout class="QGridLayout" name="gridLayout_4" rowminimumheight="0" columnminimumwidth="0,0,0,0,0">
                 <property name="leftMargin">
-                 <number>3</number>
+                 <number>0</number>
                 </property>
                 <property name="topMargin">
                  <number>0</number>
@@ -426,22 +474,25 @@ background-color: rgb(170, 0, 0);
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FAF9F6;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -478,15 +529,16 @@ QPushButton:hover {
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FAF9F6;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -524,15 +576,16 @@ QPushButton:hover {
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FAF9F6;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -567,15 +620,16 @@ QPushButton:hover {
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FAF9F6;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -607,27 +661,39 @@ QPushButton:hover {
                        <height>40</height>
                       </size>
                      </property>
+                     <property name="font">
+                      <font>
+                       <family>Segoe UI Variable Text</family>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FAF9F6;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
-                      <string>√</string>
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>media/root.png</normaloff>media/root.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
-                       <width>18</width>
-                       <height>20</height>
+                       <width>16</width>
+                       <height>14</height>
                       </size>
                      </property>
                     </widget>
@@ -648,22 +714,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FAF9F6;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -730,15 +799,16 @@ QPushButton:hover {
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FAF9F6;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -775,21 +845,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
-	background-color: rgb(255, 255, 255);
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+
+background-color: #008C72;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+color: #ffffff;
+
 }
 
 QPushButton:hover {
-	background-color: #EFEFEF;
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+	
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -819,21 +893,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
-	background-color: rgb(255, 255, 255);
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+
+background-color: #008C72;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+color: #ffffff;
+
 }
 
 QPushButton:hover {
-	background-color: #EFEFEF;
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+	
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -863,21 +941,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
-	background-color: rgb(255, 255, 255);
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+
+background-color: #008C72;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+color: #ffffff;
+
 }
 
 QPushButton:hover {
-	background-color: #EFEFEF;
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+	
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -907,22 +989,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FFFFFF;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -952,22 +1037,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FFFFFF;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1031,15 +1119,16 @@ QPushButton:hover {
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FAF9F6;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1051,8 +1140,8 @@ QPushButton:hover {
                      </property>
                      <property name="iconSize">
                       <size>
-                       <width>20</width>
-                       <height>20</height>
+                       <width>14</width>
+                       <height>13</height>
                       </size>
                      </property>
                     </widget>
@@ -1073,21 +1162,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
-	background-color: rgb(255, 255, 255);
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+
+background-color: #008C72;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+color: #ffffff;
+
 }
 
 QPushButton:hover {
-	background-color: #EFEFEF;
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+	
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1117,21 +1210,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
-	background-color: rgb(255, 255, 255);
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+
+background-color: #008C72;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+color: #ffffff;
+
 }
 
 QPushButton:hover {
-	background-color: #EFEFEF;
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+	
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1161,21 +1258,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
-	background-color: rgb(255, 255, 255);
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+
+background-color: #008C72;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+color: #ffffff;
+
 }
 
 QPushButton:hover {
-	background-color: #EFEFEF;
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+	
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1205,21 +1306,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
-	background-color: rgb(255, 255, 255);
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+
+background-color: #008C72;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+color: #ffffff;
+
 }
 
 QPushButton:hover {
-	background-color: #EFEFEF;
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+	
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1249,22 +1354,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FFFFFF;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1321,22 +1429,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FAF9F6;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1366,21 +1477,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
-	background-color: rgb(255, 255, 255);
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+
+background-color: #008C72;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+color: #ffffff;
+
 }
 
 QPushButton:hover {
-	background-color: #EFEFEF;
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+	
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1410,21 +1525,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
-	background-color: rgb(255, 255, 255);
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+
+background-color: #008C72;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+color: #ffffff;
+
 }
 
 QPushButton:hover {
-	background-color: #EFEFEF;
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+	
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1454,21 +1573,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
-	background-color: rgb(255, 255, 255);
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+
+background-color: #008C72;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+color: #ffffff;
+
 }
 
 QPushButton:hover {
-	background-color: #EFEFEF;
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+	
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1498,22 +1621,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FFFFFF;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1543,22 +1669,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FFFFFF;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1615,22 +1744,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FAF9F6;
+background-color: #004040;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1638,7 +1770,7 @@ QPushButton:hover {
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>media/delete.png</normaloff>media/delete.png</iconset>
+                       <normaloff>media/backspace.png</normaloff>media/backspace.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -1667,22 +1799,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FAF9F6;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1712,22 +1847,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FAF9F6;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1757,22 +1895,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FAF9F6;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1796,22 +1937,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
-                       <family>Segoe UI Symbol</family>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
 
-background-color: #FAF9F6;
+background-color: #008C72;
 border-radius: 5px;
 border: 1px solid #CCCCCC;
+color: #ffffff;
 
 }
 
 QPushButton:hover {
 	
-	background-color: #DDDDDD;
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1835,18 +1979,25 @@ QPushButton:hover {
                      </property>
                      <property name="font">
                       <font>
+                       <family>Segoe UI Variable Text</family>
                        <pointsize>11</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QPushButton {
-	background-color: rgb(25, 117, 197);
-	color: #ffffff;
-	border-radius: 5px;
+
+background-color: #004040;
+border-radius: 5px;
+border: 1px solid #CCCCCC;
+color: #ffffff;
+
 }
 
 QPushButton:hover {
-	background-color: #47B1E8;
+	
+	background-color: #47AC99;
 }</string>
                      </property>
                      <property name="text">
@@ -1904,9 +2055,9 @@ QPushButton:hover {
                <widget class="QLabel" name="lbl_resultSimp">
                 <property name="geometry">
                  <rect>
-                  <x>120</x>
+                  <x>130</x>
                   <y>70</y>
-                  <width>251</width>
+                  <width>221</width>
                   <height>31</height>
                  </rect>
                 </property>
@@ -1942,9 +2093,9 @@ QPushButton:hover {
                 <property name="geometry">
                  <rect>
                   <x>20</x>
-                  <y>70</y>
-                  <width>86</width>
-                  <height>30</height>
+                  <y>69</y>
+                  <width>101</width>
+                  <height>31</height>
                  </rect>
                 </property>
                 <property name="minimumSize">
@@ -1955,8 +2106,10 @@ QPushButton:hover {
                 </property>
                 <property name="font">
                  <font>
-                  <family>Segoe UI Variable</family>
+                  <family>Segoe UI Variable Text</family>
                   <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="cursor">
@@ -1964,13 +2117,13 @@ QPushButton:hover {
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton {
-	background-color: rgb(25, 117, 197);
+	background-color: #004040;
 	color: #ffffff;
 	border-radius: 5px;
 }
 
 QPushButton:hover {
-	background-color: #47B1E8;
+	background-color: #008C72;
 }</string>
                 </property>
                 <property name="text">
@@ -1980,9 +2133,9 @@ QPushButton:hover {
                <widget class="QLabel" name="lbl_resultTrap">
                 <property name="geometry">
                  <rect>
-                  <x>120</x>
+                  <x>130</x>
                   <y>20</y>
-                  <width>241</width>
+                  <width>221</width>
                   <height>25</height>
                  </rect>
                 </property>
@@ -2022,20 +2175,22 @@ QPushButton:hover {
                  <rect>
                   <x>20</x>
                   <y>20</y>
-                  <width>86</width>
-                  <height>30</height>
+                  <width>101</width>
+                  <height>31</height>
                  </rect>
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>30</width>
+                  <width>50</width>
                   <height>30</height>
                  </size>
                 </property>
                 <property name="font">
                  <font>
-                  <family>Segoe UI Variable</family>
+                  <family>Segoe UI Variable Text</family>
                   <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
                  </font>
                 </property>
                 <property name="cursor">
@@ -2043,24 +2198,30 @@ QPushButton:hover {
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton {
-	background-color: rgb(25, 117, 197);
+	background-color: #004040;
 	color: #ffffff;
 	border-radius: 5px;
 }
 
 QPushButton:hover {
-	background-color: #47B1E8;
+	background-color: #008C72;
 }</string>
                 </property>
                 <property name="text">
                  <string>Trapecio</string>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>18</width>
+                  <height>16</height>
+                 </size>
                 </property>
                </widget>
                <widget class="QLabel" name="lbl_diference">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
-                  <y>180</y>
+                  <y>190</y>
                   <width>291</width>
                   <height>17</height>
                  </rect>
@@ -2091,7 +2252,7 @@ QPushButton:hover {
                 <property name="geometry">
                  <rect>
                   <x>20</x>
-                  <y>130</y>
+                  <y>140</y>
                   <width>291</width>
                   <height>20</height>
                  </rect>
@@ -2122,14 +2283,14 @@ QPushButton:hover {
                 <property name="geometry">
                  <rect>
                   <x>20</x>
-                  <y>110</y>
+                  <y>120</y>
                   <width>211</width>
                   <height>20</height>
                  </rect>
                 </property>
                 <property name="font">
                  <font>
-                  <family>Segoe UI Variable Text Semibold</family>
+                  <family>Segoe UI Variable Text</family>
                   <pointsize>10</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
@@ -2146,14 +2307,14 @@ QPushButton:hover {
                 <property name="geometry">
                  <rect>
                   <x>20</x>
-                  <y>160</y>
+                  <y>170</y>
                   <width>201</width>
                   <height>20</height>
                  </rect>
                 </property>
                 <property name="font">
                  <font>
-                  <family>Segoe UI Variable Text Semibold</family>
+                  <family>Segoe UI Variable Text</family>
                   <pointsize>10</pointsize>
                   <weight>75</weight>
                   <bold>true</bold>
