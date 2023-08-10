@@ -1,11 +1,31 @@
-        
-from sympy import symbols, lambdify, integrate, tan, parse_expr
-from numpy import trapz
+from sympy import *
+from numpy import *
 
-x = symbols('x')
+# Ejemplo de entrada de datos con la función modificada
+funcion_introducida = "1 / (np.sqrt(x) + 1)"
+
+# Ejemplo de límites y subintervalos
+a = 0
+b = 2
+n = 4
+
+# Crear una función numérica a partir de la expresión
+def funcion(x):
+    return 1 / (sqrt(x) + 1)
+
+# Calcular los puntos (x, y) para el método del trapecio
+puntos_x = linspace(a, b, n + 1)
+puntos_y = funcion(puntos_x)
+
+# Calcular la aproximación de la integral utilizando el método del trapecio
+aprox_integral_trap = trapz(puntos_y, puntos_x)
+print(f"Aproximación con trapecio: {aprox_integral_trap:.4f}")
+
+
+""" x = symbols('x')
 
 # Ejemplo de entrada de datos con tan(3*x)
-funcion_introducida = "tan(3*x)"
+funcion_introducida = "1/(np.sqrt(4)+1)"
 
 # Ejemplo de límites y subintervalos
 a = 0
@@ -31,7 +51,7 @@ if integral_exacta.is_finite:
     print(f"Integral exacta: {integral_exacta:.4f}")
 else:
     print("La integral exacta no es un número finito. Por lo tanto, es divergente")
-
+ """
 
 """ # Definir la variable simbólica x
 x = symbols('x')

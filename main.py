@@ -53,6 +53,7 @@ class Calculadora(QMainWindow):
         self.btn_trapeze.clicked.connect(lambda: self.calcularDiferenciaTrapecio())
         self.btn_simpson.clicked.connect(lambda: self.calcularDiferenciaSimpson())
         self.btn_pi.clicked.connect(lambda: self.pi())
+        self.btn_ln.clicked.connect(lambda: self.funcionLn('ln'))
         
         # Restricciones
         
@@ -92,6 +93,11 @@ class Calculadora(QMainWindow):
     def agregandoX(self):
         text = "*x"
         self.entradadedatos.setText(self.entradadedatos.text() + text)
+
+    # Creando la funcion de ln
+    def funcionLn(self, funcion):
+        texto = f"{funcion}("
+        self.entradadedatos.setText(self.entradadedatos.text() + texto)
 
     # Creando la funcion de pi
     def pi(self):
@@ -143,7 +149,10 @@ class Calculadora(QMainWindow):
     # Creando la funcion del boton de raiz cuadrada
     def squaredRoot(self):
         
-        try:
+        texto = "np.sqrt("
+        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+        
+        """ try:
             valor_entrada = float(self.entradadedatos.text())
             
             if valor_entrada < 0:
@@ -154,7 +163,8 @@ class Calculadora(QMainWindow):
 
         except ValueError:
             self.entradadedatos.setText("Entrada inválida 😡")  # Mostrar un mensaje de error para entradas no numéricas
-
+ """
+    
     # Creando la funcion del exponencial
     def exponencial(self):
         text = "exp("
@@ -165,25 +175,29 @@ class Calculadora(QMainWindow):
         
         x = symbols('x')  # declarar la variable simbólica x
 
-        if not self.txtLimite_Inferior.text() or not self.txtLimite_Superior.text() or not self.txtSubintervalos.text():
-            self.lbl_Errores.setText("⛔ Error! Ingrese todos los límites y el número de subintervalos.")
+        try:
+            if not self.txtLimite_Inferior.text() or not self.txtLimite_Superior.text() or not self.txtSubintervalos.text():
+                self.lbl_Errores.setText("⛔ Error! Ingrese todos los límites y el número de subintervalos.")
+            
+            else:
+                a = float(self.txtLimite_Inferior.text())  # Limite inferior
+                b = float(self.txtLimite_Superior.text())  # Limite Superior
+                n = int(self.txtSubintervalos.text())  # Subintervalos
+                funcion_introducida = self.entradadedatos.text()  # Asignando la función introducida desde la entrada de datos
+
+                funcion = parse_expr(funcion_introducida)
+
+                # Calcular los puntos (x, y) para el método del trapecio
+                puntos_x = [a + i * (b - a) / n for i in range(n + 1)]
+                puntos_y = [funcion.subs(x, x_val) for x_val in puntos_x]
+
+                # Calcular la aproximación de la integral utilizando el método del trapecio
+                aprox_integral_trap = trapz(puntos_y, puntos_x)
+                self.lbl_resultTrap.setText(f"= {aprox_integral_trap:.4f}")
         
-        else:
-            a = float(self.txtLimite_Inferior.text())  # Limite inferior
-            b = float(self.txtLimite_Superior.text())  # Limite Superior
-            n = int(self.txtSubintervalos.text())  # Subintervalos
-            funcion_introducida = self.entradadedatos.text()  # Asignando la función introducida desde la entrada de datos
+        except:
+            self.lbl_Errores.setText("No se pudo calcular por Trapecio")
 
-            funcion = parse_expr(funcion_introducida)
-
-            # Calcular los puntos (x, y) para el método del trapecio
-            puntos_x = [a + i * (b - a) / n for i in range(n + 1)]
-            puntos_y = [funcion.subs(x, x_val) for x_val in puntos_x]
-
-            # Calcular la aproximación de la integral utilizando el método del trapecio
-            aprox_integral_trap = trapz(puntos_y, puntos_x)
-            self.lbl_resultTrap.setText(f"= {aprox_integral_trap:.4f}")
-    
     # Creando la otra función para la calcular la integral por Simpson
     def integralSimsom(self):
         
@@ -198,7 +212,7 @@ class Calculadora(QMainWindow):
             n = int(self.txtSubintervalos.text())
             funcion_Introducida = self.entradadedatos.text()
 
-            funcion = lambdify(x, funcion_Introducida)
+            funcion = parse_expr(funcion_Introducida)
 
             if n % 2 != 0:
                 self.lbl_Errores.setText("⛔ Error! El número de subintervalos debe ser par para el método de Simpson.")
@@ -206,7 +220,7 @@ class Calculadora(QMainWindow):
             
             h = (b - a) / n
             x_vals = [a + i * h for i in range(n+1)]
-            y_vals = [funcion(x_val) for x_val in x_vals]
+            y_vals = [funcion.subs(x,x_val) for x_val in x_vals]
         
             suma_pares = sum(y_vals[2:n-1:2])
             suma_impares = sum(y_vals[1:n:2])
