@@ -149,7 +149,7 @@ class Calculadora(QMainWindow):
     # Creando la funcion del boton de raiz cuadrada
     def squaredRoot(self):
         
-        texto = "np.sqrt("
+        texto = "sqrt("
         self.entradadedatos.setText(self.entradadedatos.text() + texto)
         
         """ try:
@@ -195,8 +195,8 @@ class Calculadora(QMainWindow):
                 aprox_integral_trap = trapz(puntos_y, puntos_x)
                 self.lbl_resultTrap.setText(f"= {aprox_integral_trap:.4f}")
         
-        except:
-            self.lbl_Errores.setText("No se pudo calcular por Trapecio")
+        except Exception as e:
+            self.lbl_Errores.setText("Error: " + str(e))
 
     # Creando la otra función para la calcular la integral por Simpson
     def integralSimsom(self):
