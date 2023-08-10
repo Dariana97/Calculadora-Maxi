@@ -89,9 +89,9 @@ class Calculadora(QMainWindow):
         nuevo_texto = texto_actual[:-1]  
         self.entradadedatos.setText(nuevo_texto)
 
-    # Creando la funcion de X
+    # Creando la funcion de x
     def agregandoX(self):
-        text = "*x"
+        text = "x"
         self.entradadedatos.setText(self.entradadedatos.text() + text)
 
     # Creando la funcion de ln
