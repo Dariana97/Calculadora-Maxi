@@ -1,4 +1,3 @@
-import math
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5.QtCore import QRegExp
@@ -14,6 +13,8 @@ class Calculadora(QMainWindow):
     def __init__(self) -> None:
         super(Calculadora, self).__init__()
         uic.loadUi('segundaoportunidad.ui', self)
+        self.campo_activo = self.entradadedatos
+        #self.campo_activo.setStyleSheet("background-color: #E5F2E8; \nborder: 0;")
 
         #Llamando a los botones
         self.btn_nine.clicked.connect(lambda: self.ingresarValores('9'))
@@ -55,6 +56,12 @@ class Calculadora(QMainWindow):
         self.btn_pi.clicked.connect(lambda: self.pi())
         self.btn_ln.clicked.connect(lambda: self.funcionLn('ln'))
         
+        # Función para cambiar de campo
+        self.entradadedatos.focusInEvent = lambda event: self.cambiarCampoActivo(self.entradadedatos)
+        self.txtLimite_Inferior.focusInEvent = lambda event: self.cambiarCampoActivo(self.txtLimite_Inferior)
+        self.txtLimite_Superior.focusInEvent = lambda event: self.cambiarCampoActivo(self.txtLimite_Superior)
+        self.txtSubintervalos.focusInEvent = lambda event : self.cambiarCampoActivo(self.txtSubintervalos)
+
         # Restricciones
         
         # Definir la expresión regular para permitir solo 'x', números y los operadores +, -, *, /    
@@ -71,7 +78,7 @@ class Calculadora(QMainWindow):
 
 # Creando las funciones de los botones  
 
-    #Creando la funcion de limpiar todo los campos
+    # Creando la funcion de limpiar todo los campos
     def limpiarTodo(self):
         self.txtLimite_Inferior.setText("")
         self.txtLimite_Superior.setText("")
@@ -83,66 +90,73 @@ class Calculadora(QMainWindow):
         self.lbl_diference.setText("")
         self.lbl_Errores.setText("")
 
+    # Cambiar campos
+    def cambiarCampoActivo(self, campo):
+        #self.campo_activo.setStyleSheet("background-color: rgba(243, 243, 243, 1); \nborder: 0;")  # Restaurar color del campo anterior
+        self.campo_activo = campo
+        #self.campo_activo.setStyleSheet("background-color: #E5F2E8; \nborder: 0;")  # Cambiar color del campo activo
+        #self.campo_activo.setFocus()
+
     # Creando la funcion de backspace
     def borrarCaracter(self):
-        texto_actual = self.entradadedatos.text()
+        texto_actual = self.campo_activo.text()
         nuevo_texto = texto_actual[:-1]  
-        self.entradadedatos.setText(nuevo_texto)
+        self.campo_activo.setText(nuevo_texto)
 
     # Creando la funcion de x
     def agregandoX(self):
         text = "x"
-        self.entradadedatos.setText(self.entradadedatos.text() + text)
+        self.campo_activo.setText(self.campo_activo.text() + text)
 
     # Creando la funcion de ln
     def funcionLn(self, funcion):
         texto = f"{funcion}("
-        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+        self.campo_activo.setText(self.campo_activo.text() + texto)
 
     # Creando la funcion de pi
     def pi(self):
-        self.entradadedatos.setText(self.entradadedatos.text() + str(pi))
+        self.campo_activo.setText(self.campo_activo.text() + str(pi))
 
     # Creando la funcion de cos
     def funcionCos(self):
         texto = "cos("
-        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+        self.campo_activo.setText(self.campo_activo.text() + texto)
 
     # Creando la funcion de tan
     def funcionTan(self):
         texto = "tan("
-        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+        self.campo_activo.setText(self.campo_activo.text() + texto)
 
     # Creando la funcion de sin
     def funcionSin(self):
         texto = "sin("
-        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+        self.campo_activo.setText(self.campo_activo.text() + texto)
 
     #Creando la funcion del cuadrado
     def cuadrado(self):
         texto = "**2"
-        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+        self.campo_activo.setText(self.campo_activo.text() + texto)
 
     # Creando la funcion del cubo
     def cubo(self):
         texto = "**3"
-        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+        self.campo_activo.setText(self.campo_activo.text() + texto)
     
     # Creando la funcion del elevado a la n
     def elevado(self):
         texto = "**"
-        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+        self.campo_activo.setText(self.campo_activo.text() + texto)
     
     # Creando la funcion para ingresar los datos
     def ingresarValores(self, tecla):
         
         try:
             if tecla >= '0' and tecla <= '9' or tecla == '(' or tecla == ')' or tecla == '.' or tecla == '*' or tecla == '/' or tecla == '+' or tecla == '-':
-                self.entradadedatos.setText(self.entradadedatos.text() + tecla)
+                self.campo_activo.setText(self.campo_activo.text() + tecla)
 
             if tecla == '=':
-                resultado = eval(self.entradadedatos.text())
-                self.entradadedatos.setText(str(resultado))
+                resultado = eval(self.campo_activo.text())
+                self.campo_activo.setText(str(resultado))
         except:
             self.lbl_Errores.setText("😔 No se pudo realizar la operacion.")
 
@@ -150,7 +164,7 @@ class Calculadora(QMainWindow):
     def squaredRoot(self):
         
         texto = "sqrt("
-        self.entradadedatos.setText(self.entradadedatos.text() + texto)
+        self.campo_activo.setText(self.campo_activo.text() + texto)
         
         """ try:
             valor_entrada = float(self.entradadedatos.text())
@@ -168,7 +182,7 @@ class Calculadora(QMainWindow):
     # Creando la funcion del exponencial
     def exponencial(self):
         text = "exp("
-        self.entradadedatos.setText(self.entradadedatos.text() + text)
+        self.campo_activo.setText(self.campo_activo.text() + text)
 
     # Creando la otra función para la calcular la integral por el trapecio
     def integralTrapecio(self):
