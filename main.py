@@ -12,7 +12,7 @@ class Calculadora(QMainWindow):
     
     def __init__(self) -> None:
         super(Calculadora, self).__init__()
-        uic.loadUi('segundaoportunidad.ui', self)
+        uic.loadUi('Interfaz_Grafica.ui', self)
         self.campo_activo = self.entradadedatos
         #self.campo_activo.setStyleSheet("background-color: #E5F2E8; \nborder: 0;")
 
