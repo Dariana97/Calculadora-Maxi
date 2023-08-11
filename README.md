@@ -4,7 +4,7 @@
 * Qt Designer
 * Python
   
-# Las librerias que debes importar
+# Las librerias que debes importar en la terminal
 * pip install pyqt5
 * pip install pyqt5-tools
 * pip install pyinstaller
